@@ -1,7 +1,6 @@
 package com.eihror.learningtests
 
-import android.content.Intent
-import androidx.test.core.app.ApplicationProvider
+import androidx.test.core.app.launchActivity
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.clearText
 import androidx.test.espresso.action.ViewActions.click
@@ -10,26 +9,16 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.isEnabled
 import androidx.test.espresso.matcher.ViewMatchers.withId
-import com.eihror.learningtests.util.lazyActivityScenarioRule
-import org.junit.Before
-import org.junit.Rule
-import org.junit.Test
+import junit.framework.TestCase
 
-class MainActivityTest {
+class MainActivityTest : TestCase() {
 
-  @get:Rule
-  val rule = lazyActivityScenarioRule<MainActivity>(launchActivity = false)
-
-  private lateinit var intent: Intent
-
-  @Before
-  fun setUp() {
-    intent = Intent(ApplicationProvider.getApplicationContext(), MainActivity::class.java)
+  override fun setUp() {
+    super.setUp()
+    launchActivity<MainActivity>()
   }
 
-  @Test
-  fun calculateTest() {
-    rule.launch(intent)
+  fun test_CalculateTest() {
     onView(withId(R.id.input_number_one)).perform(clearText(), typeText("10"))
     onView(withId(R.id.operation_add)).perform(click())
     onView(withId(R.id.input_number_two)).perform(clearText(), typeText("2"))

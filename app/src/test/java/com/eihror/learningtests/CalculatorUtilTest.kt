@@ -20,6 +20,7 @@ class CalculatorUtilTest : TestCase() {
     calculatorUtil = null
   }
 
+  @Test
   fun test_ValidateOperations() {
     // Operation ADD
     calculatorUtil?.valueOne = 10
