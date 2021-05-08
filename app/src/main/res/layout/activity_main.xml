@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".MainActivity">
+
+  <androidx.appcompat.widget.AppCompatEditText
+    android:id="@+id/input_number_one"
+    android:layout_width="0dp"
+    android:layout_height="48dp"
+    android:layout_marginBottom="16dp"
+    android:background="@drawable/rounded_blueribbon_outlined"
+    android:gravity="center"
+    android:inputType="number"
+    android:textColor="@color/black"
+    android:textSize="20sp"
+    app:layout_constraintBottom_toTopOf="@+id/group_buttons"
+    app:layout_constraintEnd_toEndOf="@+id/group_buttons"
+    app:layout_constraintStart_toStartOf="@+id/group_buttons"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_chainStyle="packed" />
+
+  <RadioGroup
+    android:id="@+id/group_buttons"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintBottom_toTopOf="@+id/input_number_two"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/input_number_one">
+
+    <RadioButton
+      android:id="@+id/operation_add"
+      android:layout_width="48dp"
+      android:layout_height="48dp"
+      android:layout_marginEnd="4dp"
+      android:background="@drawable/radio_selector_drawable"
+      android:button="@null"
+      android:gravity="center"
+      android:text="+"
+      android:textColor="@color/radio_selector_textcolor"
+      android:textSize="24sp" />
+
+    <RadioButton
+      android:id="@+id/operation_subtract"
+      android:layout_width="48dp"
+      android:layout_height="48dp"
+      android:layout_marginStart="4dp"
+      android:layout_marginEnd="4dp"
+      android:background="@drawable/radio_selector_drawable"
+      android:button="@null"
+      android:gravity="center"
+      android:text="-"
+      android:textColor="@color/radio_selector_textcolor"
+      android:textSize="24sp" />
+
+    <RadioButton
+      android:id="@+id/operation_divide"
+      android:layout_width="48dp"
+      android:layout_height="48dp"
+      android:layout_marginStart="4dp"
+      android:layout_marginEnd="4dp"
+      android:background="@drawable/radio_selector_drawable"
+      android:button="@null"
+      android:gravity="center"
+      android:text="/"
+      android:textColor="@color/radio_selector_textcolor"
+      android:textSize="24sp" />
+
+    <RadioButton
+      android:id="@+id/operation_multiply"
+      android:layout_width="48dp"
+      android:layout_height="48dp"
+      android:layout_marginStart="4dp"
+      android:background="@drawable/radio_selector_drawable"
+      android:button="@null"
+      android:gravity="center"
+      android:text="*"
+      android:textColor="@color/radio_selector_textcolor"
+      android:textSize="24sp" />
+
+  </RadioGroup>
+
+  <androidx.appcompat.widget.AppCompatEditText
+    android:id="@+id/input_number_two"
+    android:layout_width="0dp"
+    android:layout_height="48dp"
+    android:layout_marginTop="16dp"
+    android:background="@drawable/rounded_blueribbon_outlined"
+    android:gravity="center"
+    android:inputType="number"
+    android:textColor="@color/black"
+    android:textSize="20sp"
+    app:layout_constraintBottom_toTopOf="@+id/button_calculate"
+    app:layout_constraintEnd_toEndOf="@+id/group_buttons"
+    app:layout_constraintStart_toStartOf="@+id/group_buttons"
+    app:layout_constraintTop_toBottomOf="@+id/group_buttons" />
+
+  <androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/button_calculate"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:background="@drawable/rounded_blueribbon_outlined"
+    android:text="="
+    android:textColor="#0571FF"
+    android:textSize="32sp"
+    app:layout_constraintBottom_toTopOf="@+id/text_value"
+    app:layout_constraintEnd_toEndOf="@+id/group_buttons"
+    app:layout_constraintStart_toStartOf="@+id/group_buttons"
+    app:layout_constraintTop_toBottomOf="@+id/input_number_two" />
+
+  <androidx.appcompat.widget.AppCompatTextView
+    android:id="@+id/text_value"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:textSize="40sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/button_calculate"
+    tools:text="@tools:sample/lorem" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
